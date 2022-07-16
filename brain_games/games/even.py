@@ -28,5 +28,4 @@ def odd_even():
                       "Correct answer was 'no'. \n"
                       f"Let's try again, {name}!")
                 break
-        number_of_attempts += 1
     print(f'Congratulations, {name}!')
