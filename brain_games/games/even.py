@@ -7,8 +7,8 @@ def odd_even():
     name: str = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    number_of_attempts: int = 0
-    while number_of_attempts < 3:
+    number_of_attempts: int = 3
+    for i in range(number_of_attempts):
         range_of_numbers = randint(1, 100)
         print(f'Question: {range_of_numbers}')
         answer = prompt.string('Your answer: ')
@@ -29,5 +29,4 @@ def odd_even():
                       f"Let's try again, {name}!")
                 break
         number_of_attempts += 1
-    if number_of_attempts == 3:
-        print(f'Congratulations, {name}!')
+    print(f'Congratulations, {name}!')
