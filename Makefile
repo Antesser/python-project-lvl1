@@ -8,7 +8,10 @@ brain-even: #запустить скрипт
 	poetry run brain-even
 
 brain-calc: #запустить скрипт
-	poetry run brain-calc	
+	poetry run brain-calc
+
+brain-gcd: #запустить скрипт
+	poetry run brain-gcd	
 
 build:
 	poetry build
