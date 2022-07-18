@@ -16,6 +16,9 @@ brain-gcd: #запустить скрипт
 brain-progression: #запустить скрипт
 	poetry run brain-progression	
 
+brain-prime: #запустить скрипт
+	poetry run brain-prime	
+
 build:
 	poetry build
 
