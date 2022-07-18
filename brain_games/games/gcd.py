@@ -12,7 +12,7 @@ def common_division():
     for i in range(number_of_attempts):
         first_number: int = random.randint(1, 100)
         second_number: int = random.randint(1, 100)
-        print(f'{first_number} {second_number}')
+        print(f'Question: {first_number} {second_number}')
         result: int = math.gcd(first_number, second_number)
         answer: int = prompt.string('Your answer: ')
         if int(answer) == result:
