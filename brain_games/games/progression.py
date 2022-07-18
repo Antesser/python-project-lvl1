@@ -15,11 +15,11 @@ def missing_number():
         step: int = random.randint(1, 5)
         for i in range(starting_number, 100, step):
             random_numbers.append(i)
-        random_index: int = random.randint(0, len(random_numbers
-                                           [:progression_length]) - 1)
+        random_index = random.randint(0, len(random_numbers
+                                             [:progression_length]) - 1)
         question = random_numbers.copy()
-        question[random_index] = ".."
-        print(f'Question: {question[:progression_length]}')
+        question[random_index] = "'..'"
+        print(f'Question: {" ".join(map(str, question[:progression_length]))}')
         answer: int = prompt.string('Your answer: ')
         if int(answer) == random_numbers[random_index]:
             print('Correct')
