@@ -13,6 +13,9 @@ brain-calc: #запустить скрипт
 brain-gcd: #запустить скрипт
 	poetry run brain-gcd	
 
+brain-progression: #запустить скрипт
+	poetry run brain-progression	
+
 build:
 	poetry build
 
