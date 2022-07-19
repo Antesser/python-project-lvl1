@@ -18,7 +18,7 @@ def missing_number():
         random_index = random.randint(0, len(random_numbers
                                              [:progression_length]) - 1)
         question = random_numbers.copy()
-        question[random_index] = ".."
+        question[random_index] = '..'
         print(f'Question: {" ".join(map(str, question[:progression_length]))}')
         answer: int = prompt.string('Your answer: ')
         if int(answer) == random_numbers[random_index]:

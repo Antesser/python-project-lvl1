@@ -6,6 +6,8 @@ authors = ["Antesser <ahriman.kun@gmail.com>"]
 packages = [
   { include = "brain_games" },
 ]
+repository = "https://github.com/Antesser/python-project-lvl1.git"
+
 
 [tool.poetry.dependencies]
 python = "^3.8"
