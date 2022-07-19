@@ -33,4 +33,5 @@ def calculate():
                   f"Correct answer was '{random.operations}'. \n"
                   f"Let's try again, {name}!")
             break
-    print(f'Congratulations, {name}!')
+    if int(answer) == random.operations:
+        print(f'Congratulations, {name}!')
