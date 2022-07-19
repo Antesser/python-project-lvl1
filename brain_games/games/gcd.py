@@ -22,4 +22,4 @@ def common_division():
                   f"Correct answer was '{result}'. \n"
                   f"Let's try again, {name}!")
             break
-        print(f'Congratulations, {name}!')
+    print(f'Congratulations, {name}!')

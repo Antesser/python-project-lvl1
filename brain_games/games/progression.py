@@ -29,4 +29,4 @@ def missing_number():
                   f"'{random_numbers[random_index]}'. \n"
                   f"Let's try again, {name}!")
             break
-        print(f'Congratulations, {name}!')
+    print(f'Congratulations, {name}!')
