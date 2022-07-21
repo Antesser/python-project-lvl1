@@ -4,26 +4,25 @@ from random import randint, choice
 QUESTION: str = 'What is the result of the expression?'
 
 
-def main():
+def main() -> str:
     first_number: int = randint(1, 100)
     second_number: int = randint(1, 100)
-    operation = choosing_operation(first_number, second_number)
-    if operation == 'addition':
-        question: str = f'{first_number} + {second_number}'
-        answer: int = first_number + second_number
-    elif operation == 'multiplication':
-        question: str = f'{first_number} * {second_number}'
-        answer: int + first_number * second_number
-    else:
-        question: str = f'{first_number} - {second_number}'
-        answer: int = first_number - second_number
+    operation = ('*', '+', '-')
+    operation = choice(operation)
+    question: str = f'{first_number} {operation} {second_number}'
+    answer = choosing_operation(first_number, second_number, operation)
     return question, str(answer)
 
 
-def choosing_operation(first_number: int, second_number: int) -> int:
-    multiplication: int = first_number * second_number
-    addition: int = first_number + second_number
-    subtraction: int = first_number - second_number
-    operations = (multiplication, addition, subtraction)
-    operations = choice(operations)
-    return operations
+def choosing_operation(first_number: int, second_number: int,
+                       operation: str) -> int:
+    multiplication = first_number * second_number
+    addition = first_number + second_number
+    subtraction = first_number - second_number
+    if operation == '+':
+        answer: int = addition
+    elif operation == '*':
+        answer: int = multiplication
+    else:
+        answer: int = subtraction
+    return answer
