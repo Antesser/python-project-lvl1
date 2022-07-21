@@ -7,7 +7,7 @@ QUESTION: str = 'Find the greatest common divisor of given numbers.'
 def main():
     first_number: int = randint(1, 100)
     second_number: int = randint(1, 100)
-    question: str = f'{first_number} {semake publishcond_number}'
+    question: str = f'{first_number} {second_number}'
     answer: str = common_division(first_number, second_number)
     return question, str(answer)
 
