@@ -1,33 +1,25 @@
-import random
-import prompt
+from random import randint
 
 
-def missing_number():
-    print('Welcome to the Brain Games!')
-    name: str = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print('What number is missing in the progression?')
-    number_of_attempts: int = 3
-    for i in range(number_of_attempts):
-        random_numbers = []
-        progression_length: int = 10
-        starting_number: int = random.randint(1, 50)
-        step: int = random.randint(1, 5)
-        for i in range(starting_number, 100, step):
-            random_numbers.append(i)
-        random_index = random.randint(0, len(random_numbers
-                                             [:progression_length]) - 1)
-        question = random_numbers.copy()
-        question[random_index] = '..'
-        print(f'Question: {" ".join(map(str, question[:progression_length]))}')
-        answer: int = prompt.string('Your answer: ')
-        if int(answer) == random_numbers[random_index]:
-            print('Correct')
-        else:
-            print(f"'{answer}' is wrong answer ;(. "
-                  "Correct answer was "
-                  f"'{random_numbers[random_index]}'. \n"
-                  f"Let's try again, {name}!")
-            break
-    if int(answer) == random_numbers[random_index]:
-        print(f'Congratulations, {name}!')
+QUESTION: str = 'What number is missing in the progression?'
+
+
+def main():
+    random_index, random_numbers, progr_length = create_random()
+    numbers_in_question = random_numbers.copy()
+    numbers_in_question[random_index] = '..'
+    question: str = f'{" ".join(map(str, numbers_in_question[:progr_length]))}'
+    answer = random_numbers[random_index]
+    return question, str(answer)
+
+
+def create_random():
+    random_numbers = []
+    progr_length: int = 10
+    starting_number: int = randint(1, 50)
+    step: int = randint(1, 5)
+    for i in range(starting_number, 100, step):
+        random_numbers.append(i)
+    random_index = randint(0, len(random_numbers
+                                  [:progr_length]) - 1)
+    return random_index, random_numbers, progr_length

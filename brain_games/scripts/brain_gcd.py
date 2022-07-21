@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 from brain_games.games import gcd
+from brain_games.game_engine import start_engine
 
 
 def main():
-    gcd.common_division()
+    start_engine(gcd)
 
 
 if __name__ == '__main__':

@@ -1,33 +1,18 @@
-import random
-import prompt
+from random import randint
+
+QUESTION: str = 'Answer "yes" if given number is prime. Otherwise answer "no"'
 
 
-def main():
-    print('Welcome to the Brain Games!')
-    name: str = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print('Answer "yes" if given number is prime. Otherwise answer "no"')
-    number_of_attempts: int = 3
-    for i in range(number_of_attempts):
-        number: int = random.randint(2, 100)
-        print(f'Question: {number}')
-        answer: int = prompt.string('Your answer: ')
-        if is_prime(number):
-            correct_answer = 'yes'
-        else:
-            correct_answer = 'no'
-            if str(answer.lower()) == correct_answer:
-                print('Correct')
-            else:
-                print(f"'{answer}' is wrong answer ;(. "
-                      f"Correct answer was '{correct_answer}'. \n"
-                      f"Let's try again, {name}!")
-                break
-    if str(answer.lower()) == correct_answer:
-        print(f'Congratulations, {name}!')
+def main() -> str:
+    question: int = randint(1, 100)
+    if is_prime(question):
+        answer = 'yes'
+    else:
+        answer = 'no'
+    return question, answer
 
 
-def is_prime(number):
+def is_prime(number: int) -> int:
     divider: int = 2
     while number % divider != 0:
         divider += 1
