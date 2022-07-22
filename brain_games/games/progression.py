@@ -3,6 +3,7 @@ from typing import Tuple
 
 
 QUESTION: str = 'What number is missing in the progression?'
+AMOUNT_OF_NUMBERS_IN_PROGRESSION: int = 10
 
 
 def game_answer() -> Tuple[str, str]:
@@ -18,7 +19,7 @@ def generate_end_number() -> Tuple[int, int, int]:
     start_number: int = randint(1, 30)
     step: int = randint(1, 5)
     end_number: int = start_number
-    for i in range(10):
+    for i in range(AMOUNT_OF_NUMBERS_IN_PROGRESSION):
         end_number += step
     return end_number, start_number, step
 
