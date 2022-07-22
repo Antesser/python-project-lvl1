@@ -4,25 +4,21 @@ from random import randint, choice
 QUESTION: str = 'What is the result of the expression?'
 
 
-def main() -> str:
+def game_answer() -> tuple[str, str]:
     first_number: int = randint(1, 100)
     second_number: int = randint(1, 100)
     operation = ('*', '+', '-')
     operation = choice(operation)
     question: str = f'{first_number} {operation} {second_number}'
-    answer = choosing_operation(first_number, second_number, operation)
+    answer = solution(first_number, second_number, operation)
     return question, str(answer)
 
 
-def choosing_operation(first_number: int, second_number: int,
-                       operation: str) -> int:
-    multiplication = first_number * second_number
-    addition = first_number + second_number
-    subtraction = first_number - second_number
+def solution(first_number: int, second_number: int,
+             operation: str) -> int:
     if operation == '+':
-        answer: int = addition
+        return first_number + second_number
     elif operation == '*':
-        answer: int = multiplication
+        return first_number * second_number
     else:
-        answer: int = subtraction
-    return answer
+        return first_number - second_number
