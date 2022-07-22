@@ -1,17 +1,20 @@
 from random import randint
+from typing import Tuple
 
 
 QUESTION: str = 'What number is missing in the progression?'
 
 
-def game_answer():
-    number_in_question, random_index, answer_in_question = hiding_number()
-    question: str = f'{" ".join(map(str, number_in_question))}'
-    answer = answer_in_question[random_index]
+def game_answer() -> Tuple[str, str]:
+    progression = create_progression()
+    initial_progression = progression.copy()
+    random_index = hiding_number(progression)
+    question: str = f'{" ".join(map(str, progression))}'
+    answer = initial_progression[random_index]
     return question, str(answer)
 
 
-def generate_end_number() -> int:
+def generate_end_number() -> Tuple[int, int, int]:
     start_number: int = randint(1, 30)
     step: int = randint(1, 5)
     end_number: int = start_number
@@ -26,9 +29,7 @@ def create_progression() -> list:
     return random_numbers
 
 
-def hiding_number():
-    number_in_question = create_progression().copy()
-    answer_in_question = number_in_question.copy()
-    random_index = randint(0, len(number_in_question) - 1)
-    number_in_question[random_index] = '..'
-    return number_in_question, random_index, answer_in_question
+def hiding_number(progression) -> int:
+    random_index = randint(0, len(progression) - 1)
+    progression[random_index] = '..'
+    return random_index
