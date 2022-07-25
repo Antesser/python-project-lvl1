@@ -4,6 +4,10 @@ from typing import Tuple
 
 QUESTION: str = 'What number is missing in the progression?'
 AMOUNT_OF_NUMBERS_IN_PROGRESSION: int = 10
+MIN_START_NUMBER: int = 1
+MAX_START_NUMBER: int = 30
+MIN_STEP: int = 1
+MAX_STEP: int = 5
 
 
 def game_round() -> Tuple[str, str]:
@@ -14,8 +18,8 @@ def game_round() -> Tuple[str, str]:
 
 
 def create_progression() -> list:
-    start_number: int = randint(1, 30)
-    step: int = randint(1, 5)
+    start_number: int = randint(MIN_START_NUMBER, MAX_START_NUMBER)
+    step: int = randint(MIN_STEP, MAX_STEP)
     random_numbers = [start_number + step * i for i in
                       range(AMOUNT_OF_NUMBERS_IN_PROGRESSION)]
     return random_numbers
