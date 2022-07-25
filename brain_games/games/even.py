@@ -1,18 +1,19 @@
 from random import randint
+from typing import Tuple
 
 
 QUESTION: str = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def game_round() -> tuple[str, str]:
+def game_round() -> Tuple[str, str]:
     question: int = randint(1, 100)
     answer: str
-    if if_even(question):
+    if is_even(question):
         answer = 'yes'
     else:
         answer = 'no'
-    return str(question), answer
+    return question, answer
 
 
-def if_even(question) -> bool:
-    return question % 2 == 0
+def is_even(number) -> bool:
+    return number % 2 == 0

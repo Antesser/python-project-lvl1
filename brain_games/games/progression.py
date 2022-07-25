@@ -12,9 +12,9 @@ MAX_STEP: int = 5
 
 def game_round() -> Tuple[str, str]:
     progression_question, progression_answer = generating_answer_and_question()
-    question: str = f'{" ".join(map(str, progression_question))}'
+    question: str = f'{" ".join(progression_question)}'
     answer = progression_answer
-    return question, str(answer)
+    return question, answer
 
 
 def create_progression() -> list:
@@ -30,4 +30,4 @@ def generating_answer_and_question() -> Tuple[list, int]:
     random_index: int = randint(0, len(progression_question) - 1)
     progression_answer: int = progression_question[random_index]
     progression_question[random_index] = '..'
-    return progression_question, progression_answer
+    return progression_question, str(progression_answer)

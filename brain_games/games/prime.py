@@ -1,12 +1,13 @@
 from random import randint
 from math import sqrt
+from typing import Tuple
 
 QUESTION: str = 'Answer "yes" if given number is prime. Otherwise answer "no"'
 MIN_QUESTION_NUMBER: int = 1
 MAX_QUESTION_NUMBER: int = 100
 
 
-def game_round() -> tuple[str, str]:
+def game_round() -> Tuple[str, str]:
     question: int = randint(MIN_QUESTION_NUMBER, MAX_QUESTION_NUMBER)
     if is_prime(question):
         answer = 'yes'
