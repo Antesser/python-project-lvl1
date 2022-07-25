@@ -7,15 +7,15 @@ def start_game(game) -> None:
     print(f'Hello, {name}!')
     print(f'{game.QUESTION}')
     number_of_attempts: int = 3
-    for i in range(number_of_attempts):
-        question, answer = game.game_answer()  # самое сложное для понимания
+    for _ in range(number_of_attempts):
+        question, correct_answer = game.game_round()
         print(f'Question: {question}')
         user_answer: str = prompt.string('Your answer: ')
-        if user_answer == answer:
+        if user_answer == correct_answer:
             print('Correct')
         else:
             print(f"'{user_answer}' is wrong answer ;(. "
-                  f"Correct answer was '{answer}'. \n"
+                  f"Correct answer was '{correct_answer}'. \n"
                   f"Let's try again, {name}!")
             return
     print(f'Congratulations, {name}!')
