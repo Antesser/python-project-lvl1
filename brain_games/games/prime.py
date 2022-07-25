@@ -13,7 +13,7 @@ def game_round() -> tuple[str, str]:
     return question, answer
 
 
-def is_prime(number: int) -> int:
+def is_prime(number: int) -> bool:
     prime_flag: int = 0
     if(number > 1):
         for i in range(2, int(sqrt(number)) + 1):
