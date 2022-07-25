@@ -2,10 +2,12 @@ from random import randint
 from math import sqrt
 
 QUESTION: str = 'Answer "yes" if given number is prime. Otherwise answer "no"'
+MIN_QUESTION_NUMBER: int = 1
+MAX_QUESTION_NUMBER: int = 100
 
 
 def game_round() -> tuple[str, str]:
-    question: int = randint(1, 100)
+    question: int = randint(MIN_QUESTION_NUMBER, MAX_QUESTION_NUMBER)
     if is_prime(question):
         answer = 'yes'
     else:
@@ -15,7 +17,9 @@ def game_round() -> tuple[str, str]:
 
 def is_prime(number: int) -> bool:
     prime_flag: int = 0
-    if(number > 1):
+    if number <= 1:
+        return False
+    else:
         for i in range(2, int(sqrt(number)) + 1):
             if (number % i == 0):
                 prime_flag = 1
@@ -24,5 +28,3 @@ def is_prime(number: int) -> bool:
             return True
         else:
             return False
-    else:
-        return False

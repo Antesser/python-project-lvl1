@@ -2,11 +2,15 @@ from random import randint, choice
 
 
 QUESTION: str = 'What is the result of the expression?'
+MIN_FIRST_NUMBER: int = 1
+MAX_FIRST_NUMBER: int = 100
+MIN_SECOND_NUMBER: int = 1
+MAX_SECOND_NUMBER: int = 100
 
 
 def game_round() -> tuple[str, str]:
-    first_number: int = randint(1, 100)
-    second_number: int = randint(1, 100)
+    first_number: int = randint(MIN_FIRST_NUMBER, MAX_FIRST_NUMBER)
+    second_number: int = randint(MIN_SECOND_NUMBER, MAX_SECOND_NUMBER)
     operation = ('*', '+', '-')
     operation = choice(operation)
     question: str = f'{first_number} {operation} {second_number}'
