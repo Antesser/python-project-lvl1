@@ -12,7 +12,7 @@ MAX_STEP: int = 5
 
 def game_round() -> Tuple[str, str]:
     progression_question, progression_answer = generating_answer_and_question()
-    question: str = f'{" ".join(progression_question)}'
+    question: str = f'{" ".join(map(str, progression_question))}'
     answer = progression_answer
     return question, answer
 
